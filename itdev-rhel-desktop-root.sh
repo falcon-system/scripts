@@ -432,7 +432,8 @@ init_desktop() {
 	cockpit_config &&
 	grub2os_config &&
 	insights_client &&
-	poklkit_config
+	poklkit_config &&
+ 	rm script.sh;
 }
 
 init_desktop;
