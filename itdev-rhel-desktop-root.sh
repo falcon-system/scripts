@@ -81,9 +81,26 @@ google_chrome() {
 		sudo dnf remove firefox &&
 		render_footer "Google Chrome";
 	fi
-
-	
 } 
+
+keepassxc_mod() {
+
+	if grep  "keepassxc" installed.txt
+	then
+		render_header "Keepass Password" &&
+	   	echo "Keepass Password installed" &&
+		render_footer "Keepass Password";
+
+	else
+
+		render_header "Keepass Password" &&
+	    	dnf install keepassxc;
+		render_footer "Keepass Password";
+	fi
+
+
+} 
+
 
 gnome_tweaks() {
 
