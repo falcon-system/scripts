@@ -83,7 +83,7 @@ google_chrome() {
 	fi
 } 
 
-keepassxc_mod() {
+keepassxc_core() {
 
 	if grep  "keepassxc" installed.txt
 	then
@@ -435,6 +435,7 @@ init_desktop() {
 	echo $( rpm -qa ) > installed.txt  &&
 	epel_release &&
 	git_coremodule &&
+ 	keepassxc_core &&
 	git_coremodule &&
 	google_chrome &&
 	evolution_mail &&
