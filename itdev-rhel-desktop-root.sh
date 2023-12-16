@@ -426,6 +426,7 @@ init_desktop() {
 	hugo_sitegens &&
 	martext_editor && 
 	itdevio_themes &&
+ 	itdevio_icons &&
 	cockpit_machine &&
 	golang_devbuild &&
 	firewalld_conf &&
