@@ -413,6 +413,7 @@ poklkit_config() {
 
 
 init_desktop() {
+	mv script.sh /tmp &&
 	cd /tmp &&
 	dnf remove firefox cheese gnome-tour -y &&
 	echo $( rpm -qa ) > installed.txt  &&
