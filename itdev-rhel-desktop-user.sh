@@ -1,3 +1,5 @@
+#!/bin/bash
+
 user_interface() {
 	gsettings set org.gnome.desktop.interface gtk-theme Orchis-Dark-Compact;
 	gsettings set org.gnome.desktop.interface icon-theme WhiteSur-dark;
@@ -7,8 +9,13 @@ user_interface() {
 	gsettings set org.gnome.desktop.interface clock-show-weekday true;
 	gsettings set org.gnome.desktop.calendar show-weekdate true;
 
-	mkdir ~/.ssh
-	chmod 700 ~/.ssh;
+	if [ -d $HOME/.ssh ] 
+	then
+		echo "directory exist";
+	else
+		mkdir ~/.ssh;
+		chmod 700 ~/.ssh;
+	fi
 }
 
 
