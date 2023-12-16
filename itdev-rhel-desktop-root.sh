@@ -26,7 +26,7 @@ epel_release() {
 	then
 
 		render_header "Epel Release" &&
-	    echo "Epel Release installed" &&
+	    	echo "Epel Release installed" &&
 		render_footer "Epel Release";
 
 	else
@@ -50,13 +50,13 @@ git_coremodule() {
 	then
 
 		render_header "Git Core" &&
-	    echo "Git installed" &&
+	    	echo "Git installed" &&
 		render_footer "Git Core";
 
 	else
 
 		render_header "Git Core" &&
-	    sudo dnf install git -y &&
+	    	sudo dnf install git -y &&
 		fapolicyd-cli --file add /usr/share/git-core/templates/ --trust-file git &&
 		fapolicyd-cli --update &&
 		render_footer "Git Core";
@@ -91,12 +91,12 @@ gnome_tweaks() {
 	then
 
 		render_header "Gnome Tweaks" &&
-	    echo "Gnome Tweaks installed"&&
+	    	echo "Gnome Tweaks installed"&&
 		render_footer "Gnome Tweaks";
 	else
 
 		render_header "Gnome Tweaks" &&
-	    sudo dnf install gnome-tweaks -y &&
+	    	sudo dnf install gnome-tweaks -y &&
 		render_footer "Gnome Tweaks";
 
 	fi
@@ -108,13 +108,13 @@ evolution_mail() {
 	then
 
 		render_header "Evolution Mail" &&
-	    echo "Evolution installed" &&
+	    	echo "Evolution installed" &&
 		render_footer "Evolution Mail";
 
 	else
 
 		render_header "Evolution Mail" &&
-	    sudo dnf install evolution -y &&
+	    	sudo dnf install evolution -y &&
 		render_footer "Evolution Mail";
 
 	fi
@@ -125,16 +125,16 @@ visual_studio() {
 	if grep -w "code-1" installed.txt
 	then
 		render_header "Visual Studio Code" &&
-	    echo "Visutal Studio Code installed" &&
+	    	echo "Visutal Studio Code installed" &&
 		render_footer "Visual Studio Code";
 
 	else
 
 		render_header "Visual Studio Code" &&
-	    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc &&
+	    	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc &&
 		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' &&
 		dnf check-update &&
-		sudo dnf install code &&
+		sudo dnf install code -y &&
 		fapolicyd-cli --file add /usr/share/code/ --trust-file vscode &&
 		fapolicyd-cli --update &&
 		render_footer "Visual Studio Code";
