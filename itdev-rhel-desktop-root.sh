@@ -9,6 +9,8 @@ render_header() {
 	echo "========================================"
 }
 
+#test123
+
 render_footer() {
 	echo "========================================" &&
 	echo " Finishing setup $1 " &&
